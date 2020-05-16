@@ -22,14 +22,14 @@ after_success:
     - docker push cruzee/docker-fibo-app-server
     - docker push cruzee/docker-fibo-app-worker
 
-# deploy:
-#     provider: elasticbeanstalk
-#     region: "us-east-2"
-#     app: "docker-fibo-app"
-#     env: "DockerFiboApp-env"
-#     bucket_name: "elasticbeanstalk-us-east-2-387202753299"
-#     bucket_path: "docker-fibo-app"
-#     on:
-#         branch: master
-#     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key: $AWS_SECRET_KEY
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-fibo-app"
+    env: "DockerFiboApp-env"
+    bucket_name: "elasticbeanstalk-us-east-2-387202753299"
+    bucket_path: "docker-fibo-app"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
